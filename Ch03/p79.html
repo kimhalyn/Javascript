@@ -1,0 +1,11 @@
+<script>
+    for(var i = 1; i <=100; i++){
+        if(i % 5 == 0 && i % 7 != 0){ //5배수면서 7배수가 아닐 때
+            document.write("<span style='color:red'>" + i + "</span>","<br />");
+        }else if(i % 7 == 0 && i % 5 != 0){ // 7배수면서 5배수가 아닐 때
+            document.write("<span style='color:green'>" + i + "</span>","<br />");
+        }else if(i % 7 == 0 && i % 5 == 0){ //7배수면서 5배수일 때
+            document.write("<span style='color:aqua'>" + i + "</span>","<br />");
+        }
+    }
+</script>
