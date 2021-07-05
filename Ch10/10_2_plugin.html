@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('.slider').bxSlider({
+              slidewidth: 280,
+              pause: 3000,
+              pager: false,
+              controls: false
+          });
+        });
+      </script>
+</head>
+<body>
+    <h3>10-2. bxslider 플러그인</h3>
+    <div class="slider">
+        <div><img src="./img/1.jpg" alt="1"></div>
+        <div><img src="./img/2.jpg" alt="2"></div>
+        <div><img src="./img/3.jpg" alt="3"></div>
+      </div>
+</body>
+</html>

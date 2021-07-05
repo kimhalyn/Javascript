@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-1</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <style>
+        .box1{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background: orange;
+        }
+
+        .box2{
+            left: 100px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background: orange;
+        }
+
+        .#tabs {
+            width: 400px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+
+            var box = $('.box1');
+            var draggable = false;
+
+            box.mousedown(function(){
+                draggable = true;
+            }); // 마우스 누르기-> 이제 누르겠다
+
+            $(document).mousemove(function(e){
+
+                if(draggable){
+                    box.css({
+                        'left': e.pageX,
+                        'top': e.pageY,
+                    });
+                }
+            });
+            
+            box.mouseup(function(){
+                draggable = false;
+            });   // 마우스에서 떼기 -> 이제 누르지 않겠다
+
+            // draggleable 플러그인 함수
+            $('.box2').draggable({
+                'revert': true // 원래 자기 자리로 되돌아감
+            });
+
+            // tabs 플러그인
+            $('.#tabs').tabs();
+
+            // sortable 플러그인
+            $( "#sortable" ).disableSelection();
+        });
+    </script>
+    
+</head>
+<body>
+    <h3>10-1. jquery 플러그인</h3>
+
+     <h4>draggable</h4>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+
+    <h4>tabs</h4>
+    <div id="tabs">
+        <ul>
+          <li><a href="#tabs-1">1절</a></li>
+          <li><a href="#tabs-2">2절</a></li>
+          <li><a href="#tabs-3">3절</a></li>
+        </ul>
+        <div id="tabs-1">
+          <p>
+            동해물과 백두산이 마르고 닳도록 <br />
+            하느님이 보우하사 우리나라 만세<br />
+            무궁화 삼천리 화려강산<br />
+            대한사람 대한으로 길이보전하세.<br />
+          </p>
+        </div>
+        <div id="tabs-2">
+          <p>
+            동해물과 백두산이 마르고 닳도록 <br />
+            하느님이 보우하사 우리나라 만세<br />
+            무궁화 삼천리 화려강산<br />
+            대한사람 대한으로 길이보전하세.<br />
+          </p>
+        </div>
+        <div id="tabs-3">
+          <p>
+            동해물과 백두산이 마르고 닳도록 <br />
+            하느님이 보우하사 우리나라 만세<br />
+            무궁화 삼천리 화려강산<br />
+            대한사람 대한으로 길이보전하세.<br />
+          </p>
+        </div>
+      </div>
+
+      <h4>sortable</h4>
+      <ul id="sortable">
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+      </ul>
+</body>
+</html>
